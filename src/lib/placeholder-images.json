@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "og-image",
+      "description": "Open Graph image for the landing page hero section.",
+      "imageUrl": "https://images.unsplash.com/photo-1594453843726-b465f1cac129?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmYWl0aCUyMGJpYmxlfGVufDB8fHx8MTc2MTMyMzQ5M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "faith bible"
+    },
+    {
+      "id": "testimonial-ana",
+      "description": "Avatar for testimonial from Ana P.",
+      "imageUrl": "https://images.unsplash.com/photo-1692736475357-7c18bfbb808b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tYW4lMjBzbWlsaW5nfGVufDB8fHx8MTc2MTI0NjU5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman smiling"
+    },
+    {
+      "id": "testimonial-carlos",
+      "description": "Avatar for testimonial from Carlos M.",
+      "imageUrl": "https://images.unsplash.com/photo-1594672830234-ba4cfe1202dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzYxMjU1OTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-maria",
+      "description": "Avatar for a third testimonial from Mariana S.",
+      "imageUrl": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBoYXBweXxlbnwwfHx8fDE3NjEzMDE4MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person happy"
+    }
+  ]
 }
