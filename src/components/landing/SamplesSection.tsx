@@ -45,7 +45,7 @@ const samples = [
 
 export function SamplesSection() {
   return (
-    <section id="amostras" className="py-16 sm:py-24 bg-background">
+    <section id="amostras" className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
         <AnimateOnScroll>
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center text-foreground mb-12">
@@ -64,7 +64,7 @@ export function SamplesSection() {
               {samples.map((sample, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 h-full">
-                    <Card className="h-full flex flex-col justify-between border-2 border-accent/50 shadow-lg shadow-primary/5">
+                    <Card className="h-full flex flex-col justify-between border border-primary/20 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow">
                       <CardContent className="flex flex-col gap-4 p-6">
                         <p className="text-sm font-bold text-primary">DIA {sample.day}</p>
                         <blockquote className="italic text-foreground">
@@ -73,7 +73,7 @@ export function SamplesSection() {
                         <p className="text-sm font-medium text-muted-foreground text-right">
                           — {sample.reference}
                         </p>
-                        <p className="text-sm text-muted-foreground mt-2">
+                        <p className="text-sm text-foreground/80 mt-2">
                           {sample.reflection}
                         </p>
                       </CardContent>
@@ -86,8 +86,8 @@ export function SamplesSection() {
             <CarouselNext className="hidden md:flex" />
           </Carousel>
         </AnimateOnScroll>
-         <div className="text-center mt-8">
-            <p className="text-muted-foreground">Arraste para ver mais exemplos</p>
+        <div className="text-center mt-8">
+          <p className="text-muted-foreground">Arraste para ver mais exemplos</p>
         </div>
       </div>
     </section>

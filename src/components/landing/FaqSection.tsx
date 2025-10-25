@@ -12,10 +12,6 @@ const faqs = [
     answer: "O acesso é vitalício! Você pode revisitar os versículos e reflexões sempre que quiser, para o resto da sua vida.",
   },
   {
-    question: "Posso ler pelo celular?",
-    answer: "Sim! O material é entregue em formato PDF e também em uma área de membros online, ambos totalmente compatíveis e otimizados para celulares, tablets e computadores.",
-  },
-  {
     question: "E se eu não gostar?",
     answer: "Se por qualquer motivo você não sentir que este material é para você, oferecemos uma garantia incondicional de 7 dias. Basta nos enviar um e-mail e devolveremos 100% do seu investimento, sem perguntas.",
   },

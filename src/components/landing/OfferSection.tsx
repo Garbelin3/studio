@@ -9,12 +9,12 @@ const includedItems = [
   "Plano de leitura diário (checklist)",
   "Guia de aplicação prática (3–5 min/dia)",
 ];
-
+{/*
 const bonusItems = [
   "Bônus 1: 31 declarações de fé (PDF)",
   "Bônus 2: Wallpapers devocionais (pack)",
 ];
-
+*/}
 export function OfferSection() {
   return (
     <section id="oferta" className="py-16 sm:py-24 bg-secondary">
@@ -27,10 +27,10 @@ export function OfferSection() {
                 Acesso Imediato — 365 Dias de Fé
               </CardTitle>
               <div className="mt-4 flex justify-center items-baseline gap-2">
-                <span className="text-muted-foreground text-xl line-through">de R$197</span>
-                <span className="font-headline text-5xl font-bold text-foreground">R$97</span>
+                <span className="text-muted-foreground text-xl line-through">de R$37</span>
+                <span className="font-headline text-5xl font-bold text-foreground">R$16,00</span>
               </div>
-              <p className="text-muted-foreground">ou 12x de R$9,74</p>
+              <p className="text-muted-foreground">ou 3x de R$6,08</p>
             </CardHeader>
             <CardContent className="px-6 md:px-10 pb-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -44,6 +44,7 @@ export function OfferSection() {
                       </li>
                     ))}
                   </ul>
+                  {/*
                   <h4 className="font-bold text-lg mt-6 mb-4 text-foreground">Bônus Exclusivos:</h4>
                   <ul className="space-y-3">
                     {bonusItems.map((item, index) => (
@@ -53,6 +54,7 @@ export function OfferSection() {
                       </li>
                     ))}
                   </ul>
+                  */}
                 </div>
                 <div className="flex flex-col justify-between items-center bg-secondary/50 rounded-xl p-6">
                   <div className="text-center">
@@ -65,15 +67,11 @@ export function OfferSection() {
               </div>
               <div className="mt-10 flex flex-col items-center gap-4">
                  
-                <a href="#" className="w-full">
+                <a href="https://pay.cakto.com.br/xtrcq5s_620791" className="w-full">
                   <Button size="lg" className="w-full font-bold text-lg h-14 btn-primary shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transform hover:-translate-y-1 transition-all duration-300">
                     Quero Meu Acesso Agora
                   </Button>
                 </a>
-                <Button variant="ghost" className="text-muted-foreground">
-                  <PlayCircle className="mr-2 h-5 w-5" />
-                  Assistir à VSL antes de decidir
-                </Button>
               </div>
             </CardContent>
           </Card>

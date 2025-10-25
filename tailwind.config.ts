@@ -1,4 +1,4 @@
-import type {Config} from 'tailwindcss';
+import type { Config } from 'tailwindcss';
 
 export default {
   darkMode: ['class'],
@@ -72,6 +72,16 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
+        'pulse-cta': {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 0 rgba(0,0,0,0)'
+          },
+          '50%': {
+            transform: 'scale(1.05)',
+            boxShadow: '0 0 0 12px rgba(0,0,0,0)'
+          },
+        },
         'accordion-down': {
           from: {
             height: '0',
@@ -100,6 +110,7 @@ export default {
         },
       },
       animation: {
+        'cta-pulse': 'pulse-cta 3s ease-in-out infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in-up': 'fade-in-up 0.6s ease-out forwards',

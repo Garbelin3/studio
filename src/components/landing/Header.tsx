@@ -30,12 +30,12 @@ export function Header() {
           <span>365 Dias de Fé</span>
         </Link>
         <nav>
-          <a href="#oferta">
-            <Button className="font-bold hidden sm:inline-flex btn-primary shadow-lg shadow-primary/20 hover:shadow-primary/30">
-              Comprar Agora
+          <a href="https://wa.me/+5567996691616?text=Quero%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20produto!">
+            <Button className="font-bold hidden sm:inline-flex btn-primary shadow-lg shadow-primary/20 hover:shadow-primary/30 animate-cta-pulse" style={{ animationDuration: '3s' }}>
+              Fale Conosco
             </Button>
-            <Button size="sm" className="font-bold sm:hidden btn-primary shadow-lg shadow-primary/20 hover:shadow-primary/30">
-              Comprar
+            <Button size="sm" className="font-bold sm:hidden btn-primary shadow-lg shadow-primary/20 hover:shadow-primary/30 animate-cta-pulse" style={{ animationDuration: '3s' }}>
+              Fale Conosco
             </Button>
           </a>
         </nav>

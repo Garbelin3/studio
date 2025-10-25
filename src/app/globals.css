@@ -4,7 +4,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem; /* Offset for fixed header */
+  scroll-padding-top: 6rem;
+  /* Offset for fixed header */
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 50 100% 97%;
     --foreground: 215 28% 17%;
     --card: 0 0% 100%;
     --card-foreground: 215 28% 17%;
@@ -34,6 +35,7 @@ body {
     --ring: 45 96% 58%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 215 28% 12%;
     --foreground: 0 0% 98%;
@@ -61,6 +63,7 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -71,6 +74,7 @@ body {
       transform: translateY(2rem);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
+
     .animate-on-scroll.is-visible {
       opacity: 1;
       transform: translateY(0);
@@ -86,11 +90,27 @@ body {
   }
 
   @keyframes float {
-    0% { transform: translateY(0) translateX(0); opacity: 0; }
-    25% { opacity: 0.7; }
-    50% { transform: translateY(-20vh) translateX(10vw); }
-    75% { opacity: 0.7; }
-    100% { transform: translateY(0) translateX(0); opacity: 0; }
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+
+    25% {
+      opacity: 0.7;
+    }
+
+    50% {
+      transform: translateY(-20vh) translateX(10vw);
+    }
+
+    75% {
+      opacity: 0.7;
+    }
+
+    100% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
   }
 
   .glow-effect {
@@ -109,6 +129,7 @@ body {
   .btn-primary {
     @apply bg-primary text-primary-foreground hover:bg-yellow-500 transition-colors duration-300;
   }
+
   .btn-secondary {
     @apply bg-transparent border border-primary text-primary hover:bg-accent/50 transition-colors duration-300;
   }
