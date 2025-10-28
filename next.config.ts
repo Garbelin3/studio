@@ -1,4 +1,5 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
+import path from 'path';
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -7,6 +8,16 @@ const nextConfig: NextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(mp4|webm|ogg)$/i,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/media/[name][hash][ext]'
+      }
+    });
+    return config;
   },
   images: {
     remotePatterns: [
@@ -30,6 +41,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Silencia o aviso de lockfiles em diretórios diferentes
+  outputFileTracingRoot: path.join(__dirname, '../../..'),
 };
 
 export default nextConfig;

@@ -6,44 +6,30 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 import { AnimateOnScroll } from "./AnimateOnScroll";
+import { useEffect, useState } from "react";
 
-const samples = [
-  {
-    day: 1,
-    verse: "“Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho.”",
-    reference: "Salmos 119:105",
-    reflection: "Que cada passo hoje seja guiado pela sabedoria divina, iluminando as incertezas e trazendo clareza para suas decisões."
-  },
-  {
-    day: 45,
-    verse: "“Tudo posso naquele que me fortalece.”",
-    reference: "Filipenses 4:13",
-    reflection: "Lembre-se de que sua força não vem de si mesmo, mas de uma fonte inesgotável. Enfrente seus desafios com a confiança de que você não está sozinho."
-  },
-  {
-    day: 98,
-    verse: "“O Senhor é o meu pastor; nada me faltará.”",
-    reference: "Salmos 23:1",
-    reflection: "Descanse na certeza de que você está sob cuidado constante. Entregue suas ansiedades e confie na provisão para cada uma de suas necessidades."
-  },
-  {
-    day: 153,
-    verse: "“Porque para Deus nada é impossível.”",
-    reference: "Lucas 1:37",
-    reflection: "Diante de obstáculos que parecem intransponíveis, medite nesta verdade. Onde a sua força termina, o poder de Deus começa a agir."
-  },
-  {
-    day: 210,
-    verse: "“O coração alegre aformoseia o rosto.”",
-    reference: "Provérbios 15:13",
-    reflection: "A verdadeira beleza nasce de um espírito grato e contente. Hoje, escolha cultivar a alegria interior e veja como ela transparece."
-  },
-];
+const gallery = Array.from({ length: 20 }, (_, i) => `/${String(i + 1).padStart(2, "0")}.jpg`);
 
 export function SamplesSection() {
+  const [api, setApi] = useState<CarouselApi | undefined>(undefined)
+
+  useEffect(() => {
+    if (!api) return
+    const id = setInterval(() => {
+      if (!api) return
+      if (api.canScrollNext()) {
+        api.scrollNext()
+      } else {
+        api.scrollTo(0)
+      }
+    }, 2000)
+    return () => clearInterval(id)
+  }, [api])
+
   return (
     <section id="amostras" className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
@@ -58,26 +44,23 @@ export function SamplesSection() {
               align: "start",
               loop: true,
             }}
-            className="w-full max-w-4xl mx-auto"
+            className="w-full max-w-5xl mx-auto"
+            setApi={setApi}
           >
             <CarouselContent>
-              {samples.map((sample, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1 h-full">
-                    <Card className="h-full flex flex-col justify-between border border-primary/20 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow">
-                      <CardContent className="flex flex-col gap-4 p-6">
-                        <p className="text-sm font-bold text-primary">DIA {sample.day}</p>
-                        <blockquote className="italic text-foreground">
-                          {sample.verse}
-                        </blockquote>
-                        <p className="text-sm font-medium text-muted-foreground text-right">
-                          — {sample.reference}
-                        </p>
-                        <p className="text-sm text-foreground/80 mt-2">
-                          {sample.reflection}
-                        </p>
-                      </CardContent>
-                    </Card>
+              {gallery.map((src, index) => (
+                <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/3">
+                  <div className="p-2">
+                    <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl border border-primary/20 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                      <Image
+                        src={src}
+                        alt={`Amostra ${index + 1}`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover"
+                        priority={index < 2}
+                      />
+                    </div>
                   </div>
                 </CarouselItem>
               ))}

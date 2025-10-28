@@ -1,6 +1,7 @@
 import { Header } from "@/components/landing/Header";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { HowItWorksSection } from "@/components/landing/HowItWorksSection";
+import { VSLSection } from "@/components/landing/VSLSection";
 import { BenefitsSection } from "@/components/landing/BenefitsSection";
 import { SamplesSection } from "@/components/landing/SamplesSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
@@ -17,13 +18,14 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <VSLSection />
         <HowItWorksSection />
         <BenefitsSection />
         <SamplesSection />
         <TestimonialsSection />
         <GuaranteeToast />
         <OfferSection />
-        <ForWhomSection />
+        {/*<ForWhomSection />*/}
         <FaqSection />
       </main>
       <Footer />

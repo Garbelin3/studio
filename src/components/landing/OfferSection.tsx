@@ -1,75 +1,78 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Check, PlayCircle, Star } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { AnimateOnScroll } from "./AnimateOnScroll";
+import { fbqInitPurchase, fbqViewContent } from "@/lib/fpixel";
 
 const includedItems = [
-  "Material completo com 365 versículos (PDF + acesso online)",
-  "Plano de leitura diário (checklist)",
-  "Guia de aplicação prática (3–5 min/dia)",
+  "365 versículos bíblicos",
 ];
-{/*
-const bonusItems = [
-  "Bônus 1: 31 declarações de fé (PDF)",
-  "Bônus 2: Wallpapers devocionais (pack)",
-];
-*/}
 export function OfferSection() {
   return (
-    <section id="oferta" className="py-16 sm:py-24 bg-secondary">
+    <section id="oferta" className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
         <AnimateOnScroll>
-          <Card className="max-w-3xl mx-auto rounded-2xl shadow-2xl shadow-primary/10 border-2 border-primary/50 bg-background/80 backdrop-blur-sm transform hover:scale-[1.01] transition-transform duration-300 relative overflow-hidden">
-            <Badge className="absolute top-0 right-0 -mr-4 mt-6 transform rotate-45 bg-primary text-primary-foreground font-bold px-6 py-1">Oferta Especial</Badge>
-            <CardHeader className="text-center pt-12 pb-8">
-              <CardTitle className="font-headline text-3xl md:text-4xl font-extrabold text-foreground">
-                Acesso Imediato — 365 Dias de Fé
-              </CardTitle>
-              <div className="mt-4 flex justify-center items-baseline gap-2">
-                <span className="text-muted-foreground text-xl line-through">de R$37</span>
-                <span className="font-headline text-5xl font-bold text-foreground">R$16,00</span>
+          <Card className="max-w-md mx-auto rounded-3xl shadow-xl shadow-primary/10 border border-foreground/10 bg-white/90 backdrop-blur-sm">
+            <CardHeader className="text-center pt-8 pb-4">
+              <CardTitle className="font-headline text-2xl md:text-3xl font-extrabold text-foreground">Versão Básica</CardTitle>
+              <p className="text-muted-foreground text-sm mt-1">O essencial para começar a jornada.</p>
+              <div className="mt-5 flex flex-col items-center gap-1">
+                <span className="text-muted-foreground line-through">de R$ 97,00</span>
+                <div className="flex items-end gap-1">
+                  <span className="text-sm font-bold">R$</span>
+                  <span className="font-headline text-5xl font-extrabold leading-none">16,00</span>
+                </div>
+                <div className="mt-2 inline-flex items-center rounded-full bg-primary text-primary-foreground font-bold px-4 py-1">
+                  Economize R$ 81,00
+                </div>
               </div>
-              <p className="text-muted-foreground">ou 3x de R$6,08</p>
             </CardHeader>
-            <CardContent className="px-6 md:px-10 pb-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-bold text-lg mb-4 text-foreground">O que você recebe:</h4>
-                  <ul className="space-y-3">
-                    {includedItems.map((item, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {/*
-                  <h4 className="font-bold text-lg mt-6 mb-4 text-foreground">Bônus Exclusivos:</h4>
-                  <ul className="space-y-3">
-                    {bonusItems.map((item, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <Star className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  */}
+            <CardContent className="px-6 pb-8">
+              <ul className="space-y-3">
+                {includedItems.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground/80">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <a href="https://pay.cakto.com.br/xtrcq5s_620791" className="block" onClick={() => fbqInitPurchase(16.0, 'Offer Básica')}>
+                  <Button size="lg" className="w-full font-bold h-12 btn-primary animate-cta-pulse">
+                    Comprar Agora
+                  </Button>
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </AnimateOnScroll>
+
+        <AnimateOnScroll delay={200}>
+          <Card className="mt-10 max-w-md mx-auto rounded-3xl shadow-xl shadow-primary/10 border border-foreground/10 bg-white/90 backdrop-blur-sm">
+            <CardHeader className="text-center pt-8 pb-4">
+              <CardTitle className="font-headline text-2xl md:text-3xl font-extrabold text-foreground">Pacote Premium</CardTitle>
+              <p className="text-muted-foreground text-sm mt-1">365 versículos + Manhãs com Deus + 355 músicas Gospel sem propagandas</p>
+              <div className="mt-5 flex flex-col items-center gap-1">
+                <span className="text-muted-foreground line-through">de R$ 37,00</span>
+                <div className="flex items-end gap-1">
+                  <span className="text-sm font-bold">R$</span>
+                  <span className="font-headline text-5xl font-extrabold leading-none">24,99</span>
                 </div>
-                <div className="flex flex-col justify-between items-center bg-secondary/50 rounded-xl p-6">
-                  <div className="text-center">
-                    <h4 className="font-bold text-lg text-foreground">Garantia Incondicional</h4>
-                     <p className="text-sm text-muted-foreground mt-2">Se não for para você, devolvemos 100% do seu dinheiro em até 7 dias.</p>
-                  </div>
-                  <svg className="w-24 h-24 text-primary my-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M10.5 15.5L16.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M7.5 12.5L10.5 15.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                   <p className="text-xs text-muted-foreground text-center">Acesso imediato após confirmação de pagamento.</p>
+                <div className="mt-2 inline-flex items-center rounded-full bg-primary text-primary-foreground font-bold px-4 py-1">
+                  Economize R$ 12,01
                 </div>
               </div>
-              <div className="mt-10 flex flex-col items-center gap-4">
-                 
-                <a href="https://pay.cakto.com.br/xtrcq5s_620791" className="w-full">
-                  <Button size="lg" className="w-full font-bold text-lg h-14 btn-primary shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transform hover:-translate-y-1 transition-all duration-300">
-                    Quero Meu Acesso Agora
+            </CardHeader>
+            <CardContent className="px-6 pb-8">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" /><span className="text-foreground/80">365 versículos</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" /><span className="text-foreground/80">Manhãs com Deus</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" /><span className="text-foreground/80">355 músicas Gospel sem propagandas</span></li>
+              </ul>
+              <div className="mt-8">
+                <a href="https://pay.cakto.com.br/osdcuq6_622211" className="block" onClick={() => fbqInitPurchase(24.99, 'Offer Premium')}>
+                  <Button size="lg" className="w-full font-bold h-12 btn-primary animate-cta-pulse">
+                    Comprar Agora
                   </Button>
                 </a>
               </div>
