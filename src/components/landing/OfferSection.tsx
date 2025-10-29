@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, Star } from "lucide-react";
+import { CheckCircle2, Star, ShieldCheck } from "lucide-react";
 import { AnimateOnScroll } from "./AnimateOnScroll";
 import { fbqInitPurchase, fbqViewContent } from "@/lib/fpixel";
 
@@ -44,6 +44,9 @@ export function OfferSection() {
                     Comprar Agora
                   </Button>
                 </a>
+                <p className="mt-3 text-center text-xs text-muted-foreground inline-flex items-center justify-center gap-1 w-full">
+                  <ShieldCheck className="h-3.5 w-3.5 text-primary" /> Pagamento aprovado com segurança
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -81,6 +84,9 @@ export function OfferSection() {
                     Comprar Agora
                   </Button>
                 </a>
+                <p className="mt-3 text-center text-xs text-muted-foreground inline-flex items-center justify-center gap-1 w-full">
+                  <ShieldCheck className="h-3.5 w-3.5 text-primary" /> Pagamento aprovado com segurança
+                </p>
               </div>
             </CardContent>
           </Card>

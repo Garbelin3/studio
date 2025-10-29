@@ -12,12 +12,13 @@ import { Footer } from "@/components/landing/Footer";
 import { BackToTopButton } from "@/components/landing/BackToTopButton";
 import { GuaranteeToast } from "@/components/landing/GuaranteeToast";
 import { VerseBanner } from "@/components/landing/VerseBanner";
+import { PurchaseNotifications } from "@/components/landing/PurchaseNotifications";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      
+
       <main>
         <VerseBanner />
         <HeroSection />
@@ -33,6 +34,7 @@ export default function Home() {
       </main>
       <Footer />
       <BackToTopButton />
+      <PurchaseNotifications />
     </div>
   );
 }
