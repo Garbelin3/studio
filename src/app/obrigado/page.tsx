@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { Suspense, useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 import { fbqTrack } from "@/lib/fpixel";
 
-export default function ObrigadoPage() {
+export const dynamic = 'force-dynamic';
+
+function ObrigadoContent() {
     const searchParams = useSearchParams();
 
     const { value, currency, plan } = useMemo(() => {
@@ -53,6 +55,14 @@ export default function ObrigadoPage() {
                 </div>
             </div>
         </section>
+    );
+}
+
+export default function ObrigadoPage() {
+    return (
+        <Suspense fallback={<div className="py-20 text-center text-muted-foreground">Carregando...</div>}>
+            <ObrigadoContent />
+        </Suspense>
     );
 }
 

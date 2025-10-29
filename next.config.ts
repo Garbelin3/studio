@@ -2,6 +2,8 @@ import type { NextConfig } from 'next';
 import path from 'path';
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -20,6 +22,7 @@ const nextConfig: NextConfig = {
     return config;
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

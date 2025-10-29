@@ -13,7 +13,7 @@ export function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="hero" className="relative bg-background pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <section id="hero" className="relative bg-background pt-36 pb-16 md:pt-48 md:pb-24 overflow-hidden">
       <ParticleBackground />
       <div className="glow-effect"></div>
 
@@ -26,7 +26,7 @@ export function HeroSection() {
           </AnimateOnScroll>
           <AnimateOnScroll delay={200}>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              365 mensagens bíblicas para guiar seu coração todos os dias do ano. Experimente o poder da Palavra aplicada à sua rotina.
+              Um PDF com 365 mensagens bíblicas para guiar seu coração todos os dias do ano. Experimente o poder da Palavra aplicada à sua rotina.
             </p>
           </AnimateOnScroll>
           <AnimateOnScroll delay={400} className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">

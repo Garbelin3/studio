@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
 };
 
-const facebookPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID ?? "1186620116862994";
+const facebookPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID ?? "2264878620684653";
 
 const jsonLd = {
   "@context": "https://schema.org",

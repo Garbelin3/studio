@@ -1,6 +1,8 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Star } from "lucide-react";
 import { AnimateOnScroll } from "./AnimateOnScroll";
 import { fbqInitPurchase, fbqViewContent } from "@/lib/fpixel";
 
@@ -17,13 +19,13 @@ export function OfferSection() {
               <CardTitle className="font-headline text-2xl md:text-3xl font-extrabold text-foreground">Versão Básica</CardTitle>
               <p className="text-muted-foreground text-sm mt-1">O essencial para começar a jornada.</p>
               <div className="mt-5 flex flex-col items-center gap-1">
-                <span className="text-muted-foreground line-through">de R$ 97,00</span>
+                <span className="text-muted-foreground line-through">de R$ 37,00</span>
                 <div className="flex items-end gap-1">
                   <span className="text-sm font-bold">R$</span>
                   <span className="font-headline text-5xl font-extrabold leading-none">16,00</span>
                 </div>
                 <div className="mt-2 inline-flex items-center rounded-full bg-primary text-primary-foreground font-bold px-4 py-1">
-                  Economize R$ 81,00
+                  Economize R$ 21,00
                 </div>
               </div>
             </CardHeader>
@@ -48,18 +50,22 @@ export function OfferSection() {
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={200}>
-          <Card className="mt-10 max-w-md mx-auto rounded-3xl shadow-xl shadow-primary/10 border border-foreground/10 bg-white/90 backdrop-blur-sm">
+          <Card className="mt-10 max-w-md mx-auto rounded-3xl shadow-xl shadow-primary/10 border border-foreground/10 bg-white/90 backdrop-blur-sm relative">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full shadow inline-flex items-center gap-1">
+              <Star className="h-3.5 w-3.5" fill="currentColor" />
+              Recomendado
+            </div>
             <CardHeader className="text-center pt-8 pb-4">
               <CardTitle className="font-headline text-2xl md:text-3xl font-extrabold text-foreground">Pacote Premium</CardTitle>
               <p className="text-muted-foreground text-sm mt-1">365 versículos + Manhãs com Deus + 355 músicas Gospel sem propagandas</p>
               <div className="mt-5 flex flex-col items-center gap-1">
-                <span className="text-muted-foreground line-through">de R$ 37,00</span>
+                <span className="text-muted-foreground line-through">de R$ 97,00</span>
                 <div className="flex items-end gap-1">
                   <span className="text-sm font-bold">R$</span>
-                  <span className="font-headline text-5xl font-extrabold leading-none">24,99</span>
+                  <span className="font-headline text-5xl font-extrabold leading-none">25,00</span>
                 </div>
                 <div className="mt-2 inline-flex items-center rounded-full bg-primary text-primary-foreground font-bold px-4 py-1">
-                  Economize R$ 12,01
+                  Economize R$ 72,00
                 </div>
               </div>
             </CardHeader>

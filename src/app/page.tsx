@@ -11,12 +11,15 @@ import { FaqSection } from "@/components/landing/FaqSection";
 import { Footer } from "@/components/landing/Footer";
 import { BackToTopButton } from "@/components/landing/BackToTopButton";
 import { GuaranteeToast } from "@/components/landing/GuaranteeToast";
+import { VerseBanner } from "@/components/landing/VerseBanner";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
+      
       <main>
+        <VerseBanner />
         <HeroSection />
         <VSLSection />
         <HowItWorksSection />
