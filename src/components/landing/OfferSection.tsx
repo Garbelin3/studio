@@ -39,7 +39,7 @@ export function OfferSection() {
                 ))}
               </ul>
               <div className="mt-8">
-                <a href="https://pay.cakto.com.br/xtrcq5s_620791" className="block" onClick={() => fbqInitPurchase(16.0, 'Offer Básica')}>
+                <a href="https://checkout.codeprogram.com.br/VCCL1O8SCF8G" className="block" onClick={() => fbqInitPurchase(16.0, 'Offer Básica')}>
                   <Button size="lg" className="w-full font-bold h-12 btn-primary animate-cta-pulse">
                     Comprar Agora
                   </Button>
@@ -79,7 +79,7 @@ export function OfferSection() {
                 <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" /><span className="text-foreground/80">355 músicas Gospel sem propagandas</span></li>
               </ul>
               <div className="mt-8">
-                <a href="https://pay.cakto.com.br/osdcuq6_622211" className="block" onClick={() => fbqInitPurchase(24.99, 'Offer Premium')}>
+                <a href="https://checkout.codeprogram.com.br/VCCL1O8SCF8K" className="block" onClick={() => fbqInitPurchase(24.99, 'Offer Premium')}>
                   <Button size="lg" className="w-full font-bold h-12 btn-primary animate-cta-pulse">
                     Comprar Agora
                   </Button>

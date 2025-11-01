@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { fbqInitPurchase } from "@/lib/fpixel";
+import { fbqViewContent } from "@/lib/fpixel";
 import { AnimateOnScroll } from "./AnimateOnScroll";
 
 const faqs = [
@@ -51,7 +51,7 @@ export function FaqSection() {
             ))}
           </Accordion>
           <div className="mt-10 flex justify-center">
-            <a href="https://pay.cakto.com.br/xtrcq5s_620791" className="w-full sm:w-auto" onClick={() => fbqInitPurchase(16.0, 'FAQ CTA')}>
+            <a href="#oferta" className="w-full sm:w-auto" onClick={() => fbqViewContent('FAQ Go To Offers')}>
               <Button size="lg" className="w-full sm:w-auto font-bold h-12 btn-primary animate-cta-pulse">
                 Tirei minhas dúvidas, quero comprar!
               </Button>

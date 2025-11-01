@@ -7,7 +7,7 @@ import { PlayCircle, ShieldCheck, Star } from "lucide-react";
 import { AnimateOnScroll } from "./AnimateOnScroll";
 import ParticleBackground from "./ParticleBackground";
 import { VSLModal } from "./VSLModal";
-import { fbqInitPurchase } from "@/lib/fpixel";
+import { fbqViewContent } from "@/lib/fpixel";
 
 export function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,11 +26,11 @@ export function HeroSection() {
           </AnimateOnScroll>
           <AnimateOnScroll delay={200}>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Um PDF com 365 mensagens bíblicas para guiar seu coração todos os dias do ano. Experimente o poder da Palavra aplicada à sua rotina.
+              Um Produto com 365 mensagens bíblicas para guiar seu coração todos os dias do ano. Experimente o poder da Palavra aplicada à sua rotina.
             </p>
           </AnimateOnScroll>
           <AnimateOnScroll delay={400} className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="https://pay.cakto.com.br/xtrcq5s_620791" onClick={() => fbqInitPurchase(16.0, 'Hero CTA - 365 Dias de Fé')}>
+            <a href="#oferta" onClick={() => fbqViewContent('Hero Go To Offers')}>
               <Button size="lg" className="w-full sm:w-auto font-bold text-lg px-10 py-7 btn-primary shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transform hover:-translate-y-1 transition-all duration-300 animate-cta-pulse" style={{ animationDuration: '3s' }}>
                 Comprar agora!
               </Button>

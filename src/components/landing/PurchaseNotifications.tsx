@@ -4,13 +4,19 @@ import { useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const FIRST_NAMES = [
-    "Ana", "Carlos", "Mariana", "João", "Paula", "Rafael", "Bruna", "Lucas",
-    "Fernanda", "Gustavo", "Camila", "Pedro", "Larissa", "André", "Patrícia",
+  "Ana", "Beatriz", "Bruna", "Camila", "Carolina", "Clara", "Daniela", "Elisa", "Fernanda", "Gabriela",
+  "Helena", "Isabela", "Julia", "Larissa", "Letícia", "Luana", "Mariana", "Nathalia", "Patrícia", "Paula",
+  "Priscila", "Rafaela", "Renata", "Sofia", "Tatiane", "Vitória", "Yasmin",
+  "Alex", "André", "Bruno", "Carlos", "Daniel", "Diego", "Eduardo", "Felipe", "Fernando", "Gabriel",
+  "Guilherme", "Gustavo", "Henrique", "João", "José", "Leonardo", "Lucas", "Marcelo", "Mateus", "Miguel",
+  "Pedro", "Rafael", "Ricardo", "Rodrigo", "Thiago", "Vitor"
 ];
 
 const LAST_NAMES = [
-    "Silva", "Souza", "Oliveira", "Santos", "Pereira", "Lima", "Gomes", "Ribeiro",
-    "Almeida", "Fernandes", "Carvalho", "Araujo", "Melo", "Barbosa", "Rocha",
+  "Silva", "Santos", "Oliveira", "Souza", "Pereira", "Lima", "Gomes", "Ribeiro", "Almeida", "Fernandes",
+  "Carvalho", "Araujo", "Melo", "Barbosa", "Rocha", "Dias", "Teixeira", "Moreira", "Correia", "Cardoso",
+  "Pinto", "Castro", "Nunes", "Freitas", "Cavalcante", "Campos", "Monteiro", "Moura", "Machado", "Gonçalves",
+  "Vieira", "Sousa", "Batista", "Andrade", "Sales", "Farias", "Barros", "Cunha", "Xavier", "Romero"
 ];
 
 const PHRASES = [
@@ -34,10 +40,45 @@ export function PurchaseNotifications() {
     const { toast } = useToast();
     const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // Gera combinações únicas de Nome + Sobrenome e embaralha
+  const combosRef = useRef<string[] | null>(null);
+  const indexRef = useRef<number>(0);
+
+  function shuffle<T>(arr: T[]): T[] {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function ensureCombos() {
+    if (!combosRef.current) {
+      const combos: string[] = [];
+      for (const fn of FIRST_NAMES) {
+        for (const ln of LAST_NAMES) {
+          combos.push(`${fn} ${ln}`);
+        }
+      }
+      combosRef.current = shuffle(combos);
+      indexRef.current = 0;
+    }
+  }
+
     useEffect(() => {
+    ensureCombos();
         const schedule = () => {
             timerRef.current = setTimeout(() => {
-                const name = `${getRandom(FIRST_NAMES)} ${getRandom(LAST_NAMES)}`;
+        ensureCombos();
+        const list = combosRef.current as string[];
+        const name = list[indexRef.current % list.length];
+        indexRef.current += 1;
+        if (indexRef.current % list.length === 0) {
+          // reinicia com nova ordem quando esgotar a lista
+          combosRef.current = shuffle(list);
+          indexRef.current = 0;
+        }
                 const isPremium = Math.random() > 0.5;
                 const plan = isPremium ? "Pacote Premium" : "Versão Básica";
                 const message = `🕊️ ${getRandom(PHRASES)(name, plan)}`;
